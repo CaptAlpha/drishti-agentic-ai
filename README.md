@@ -1,10 +1,26 @@
-# Flask API Service Starter
+# Project Drishti – Multi-Agent Workflow
 
-This is a minimal Flask API service starter based on [Google Cloud Run Quickstart](https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-python-service).
+Drishti is an AI-powered event monitoring system that leverages multiple autonomous agents to analyze CCTV footage, forecast crowd levels, detect panic or hazards, and generate real-time summaries. It uses Google's Agentic Development Kit (ADK), Gemini models, and a Flask backend to orchestrate interactions between agents.
 
-## Getting Started
+## 🧠 Architecture Overview
 
-Server should run automatically when starting a workspace. To run manually, run:
-```sh
-./devserver.sh
-```
+Drishti is composed of a **Root Agent** that coordinates several **Child Agents**, each handling a distinct capability:
+
+- 🔍 `SummaryAgent` — Generates real-time event summaries using Firestore logs and Gemini.
+- 📈 `ForecastAgent` — Predicts future crowd density using time-series data and BQML or ARIMA.
+- 🎯 `PanicDetectionAgent` — Detects chaos or panic in video feeds using Gemini + MoviePy.
+- 🚨 `SosAgent` — Triggers SOS alerts based on hazard detection or crowd severity.
+- 🗺️ `NavigationAgent` — Recommends the safest exit routes using Google Maps + crowd data.
+
+Agents communicate using ADK’s multi-agent orchestration interface.
+
+---
+
+## 🧪 Environment Setup
+
+This project runs in a **Nix-based environment** managed by **Firebase Studio** and uses **Python 3**.
+
+### 1. Activate the virtual environment
+```bash
+source .venv/bin/activate
+adk run multi_tool_agent/

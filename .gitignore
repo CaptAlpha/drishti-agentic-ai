@@ -1,0 +1,19 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore virtual environment directory
+.venv/
+
+# Ignore editor and IDE specific files
+.vscode/
+.idea/
+
+# Ignore environment variables file
+.env
+
+# Ignore firebase related files
+firebase.json
+**/.*.log
+
+# Ignore test videos
+resources/*.mp4

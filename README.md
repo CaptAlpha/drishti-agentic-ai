@@ -15,7 +15,8 @@ Drishti is composed of a **Root Agent** that coordinates several **Child Agents*
 Agents communicate using ADK’s multi-agent orchestration interface.
 
 Run get request for <code>
-https://adk-default-service-name-450141277196.us-central1.run.app/apps/multi_tool_agent/users/user_123/sessions/session_abc</code> at the start
+https://adk-default-service-name-450141277196.us-central1.run.app/apps/multi_tool_agent/users/user_123/sessions/session_abc</code> at the start.
+The session will be created even if the response is 404. 
 
 ---
 
